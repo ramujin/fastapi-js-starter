@@ -1,15 +1,14 @@
 //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 // Define the 'request' function to handle interactions with the server
-window.request = function(url, data, callback, verb) {
+window.request = function(url, data={}, callback, verb) {
   return fetch(url, {
     credentials: 'same-origin',
-    method: verb, // GET, PUT, POST, DELETE...
-    body: data ? JSON.stringify(data) : null,
-    headers: new Headers({
+    method: verb,
+    body: JSON.stringify(data),
+    headers: {
       'Content-Type': 'application/json',
-      'Accept': 'application/json, text-plain, */*',
       'X-Requested-With': 'XMLHttpRequest'
-    })
+    }
   })
   .then(response => response.json())
   .then(function(response) {
@@ -20,7 +19,7 @@ window.request = function(url, data, callback, verb) {
 }
 
 //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-// Make a request to the server
+// Make a request to the server by tying an event listener to the form
 const form = document.getElementById('request_form');
 form.addEventListener('submit', (event) => {
   // Stop the default form behavior
@@ -36,7 +35,7 @@ form.addEventListener('submit', (event) => {
 });
 
 //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-// Handle the server response
+// Handle the server response with this callback funnction
 function server_response(data) {
   const div = document.getElementById('response');
   div.textContent = data.payload;
