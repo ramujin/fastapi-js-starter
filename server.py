@@ -22,13 +22,14 @@ def get_html() -> HTMLResponse:
 @router.post("/client_request")
 async def post_form(request:Request) -> dict:
 
-  # Check if it's an AJAX request (JSON) or a web form post (multipart form data) and retrieve it
+  # Check if it's an AJAX request (JSON) or a web form and retrieve the data
   data = {}
   if request.headers['content-type'] == 'application/json':
     data = await request.json()
   else:
     data = await request.form()
 
+  # Send the data right back to the client
   return {"payload": data['payload']}
 
 
