@@ -4,7 +4,7 @@ This repo is just simple starter code to get started working with the [FastAPI w
 
 ## Prerequesites
 
-You just need to have Python 3.7+ installed (3.10+ for the simplified typehinting)
+You just need to have Python 3.7+ installed (3.10+ for the simplified typehinting).
 
 ## Usage
 
