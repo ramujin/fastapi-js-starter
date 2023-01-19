@@ -38,5 +38,3 @@ You just need to have Python 3.7+ installed (3.10+ for the simplified typehintin
     ```bash
     uvicorn server:router --reload
     ```
-
-5. The Rest of the README is incomplete until the source is finalized.
