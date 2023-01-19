@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>ECE 140A | RickG & RamsinK</title>
+  </head>
+  <body>
+    <h1>Hello, ECE 140A!</h1>
+
+    <div> Type something below: </div>
+
+    <form id='request_form' action='/client_request' method='POST'>
+      <input type='text' name='payload' placeholder='...'/>
+      <input type='submit' value='Enter'/>
+    </form>
+
+    <div> The server says you sent it: <b><span id='response'>...</span></b>
+    </div>
+
+    <script src='public/js/demo.js'></script>
+  </body>
+</html>
