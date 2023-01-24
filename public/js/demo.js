@@ -40,3 +40,12 @@ function server_response(data) {
   const div = document.getElementById('response');
   div.textContent = data.payload;
 }
+
+//''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+// Client-side dynamic behavior using Javascript! We run a timer every second
+let start = Date.now();
+setInterval(() => {
+  let elapsed = Date.now() - start;
+  const timer = document.getElementById('page-load-timer');
+  timer.textContent = Math.floor(elapsed/1000);
+}, 1000);

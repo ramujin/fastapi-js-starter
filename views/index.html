@@ -5,16 +5,37 @@
   <body>
     <h1>Hello, ECE 140A!</h1>
 
-    <div> Type something below: </div>
+    <!-- ---------------------------------------------------------------------------------------------------- -->
+    <!-- Below is a form that gets submitted with traditional HTML forms  -->
+    <hr/>
+    <h3> Web form submission with HTML form </h3>
 
+    <form action='/client_request' method='POST'>
+      <input type='text' name='payload' placeholder='Type something...'/>
+      <input type='submit' value='HTML POST'/>
+    </form>
+
+    <!-- ---------------------------------------------------------------------------------------------------- -->
+    <!-- Below is a form that gets submitted with traditional HTML forms  -->
+    <hr/>
+    <h3> Web form submission with Javascript </h3>
     <form id='request_form' action='/client_request' method='POST'>
-      <input type='text' name='payload' placeholder='...'/>
-      <input type='submit' value='Enter'/>
+      <input type='text' name='payload' placeholder='Type something...'/>
+      <input type='submit' value='Javascript POST'/>
     </form>
 
     <div> The server says you sent it: <b><span id='response'>...</span></b>
     </div>
 
+    <!-- ---------------------------------------------------------------------------------------------------- -->
+    <!-- This timer gets updated with a Javascript setInterval timer -->
+    <hr/>
+    <h3> Javascript client-side interaction </h3>
+    <div> It has been <span id='page-load-timer'>0</span> second(s) since you loaded the page.</div>
+
+    <!-- ---------------------------------------------------------------------------------------------------- -->
+    <!-- All the Javascript magic happens in the script below! -->
     <script src='public/js/demo.js'></script>
+
   </body>
 </html>

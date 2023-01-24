@@ -32,7 +32,6 @@ async def post_form(request:Request) -> dict:
   # Send the data right back to the client
   return {"payload": data['payload']}
 
-
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 # If running the server directly from Python as a module
 if __name__ == "__main__":
